@@ -20,15 +20,20 @@ In this project, I built a mini honeynet in Azure and ingested log sources from 
 [Architecture Diagram]![image](https://github.com/evanwessman/Cloud-SOC/assets/161767976/88add5b9-1314-4e4e-b4eb-a334eb04a67b)
 
 
-The architecture of the mini honeynet in Azure consists of the following components:
+The architecture and tools implemented in the mini honeynet in Azure consist of the following:
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
 - Virtual Machines (2 windows, 1 linux)
-- Log Analytics Workspace
+- Log Analytics Workspace w/ Kusto Query Language
 - Azure Key Vault
 - Azure Storage Account
-- Microsoft Sentinel
+- Microsoft Sentinel (SIEM)
+- Windows Defender for Cloud
+- Azure PrivateLink
+- NIST SP 800-53
+- NIST SP 800-61
+
 
 For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
@@ -70,6 +75,14 @@ Stop Time	2024-04-03 18:26:28
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
+
+## Analytics WorkSpace Queries Post Hardening Showed Dramatic Enhancement to Security Via: 
+
+- SecurityEvent: 73.42% Reduction
+- Syslog: 99.98% Reduction
+- SecurityAlert: 100% Reduction
+- SecurityIncident: 100% Reduction
+- AzureNetworkAnalytics_CL: N/A
 
 ## Conclusion
 
