@@ -84,6 +84,15 @@ Stop Time	2024-04-03 18:26:28
 - SecurityIncident: 100% Reduction
 - AzureNetworkAnalytics_CL: N/A
 
+## Incident Response Handling Methodology
+
+To effectively manage high-priority incidents, I followed the guidelines of NIST 800-61 (Revision 2) and applied the security measures outlined in NIST SP 800-53 (Revision 5). The strategy included:
+
+- Preparatory steps involved setting up a log analytics workspace, configuring Azure Sentinel, and creating alerts for detecting incidents. Implementing security measures from NIST SP 800-53 (Revision 5) was key to establishing a secure and resilient framework.
+- Upon the occurrence of incidents, I evaluated their severity by categorizing them and then conducted in-depth investigations into the logs to separate false alarms from genuine threats. This process was informed by the incident response protocols in NIST 800-61 (Revision 2), which helped in understanding the extent of the impact.
+- For a more efficient response to incidents, I utilized an incident response playbook that was in line with NIST 800-61 (Revision 2), ensuring detailed documentation of the incident specifics. This was supported by the appropriate application of security controls from NIST SP 800-53 (Revision 5) during the incident handling activities.
+- After resolving each incident, I carried out detailed documentation of the findings, actions taken, and analyses conducted. The conclusion of this process included specifying the resolution and any required subsequent actions, all while adhering to the security controls specified in NIST SP 800-53 (Revision 5).
+
 ## Conclusion
 
 In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
